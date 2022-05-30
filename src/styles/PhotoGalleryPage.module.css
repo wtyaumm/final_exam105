@@ -1,0 +1,9 @@
+.cards {
+    margin: 20px;
+
+}
+
+.all {
+    display: flex;
+    flex-wrap: wrap;
+}
