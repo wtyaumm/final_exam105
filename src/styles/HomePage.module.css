@@ -6,6 +6,31 @@
 }
 
 .title {
-    font-size: larger;
+    font-size: 30px;
     font-weight: 600;
+    color: lightcoral;
+}
+
+.input {
+    border-radius: 50px !important;
+    width: 80%;
+}
+
+.button {
+    background-color: rgb(255, 214, 230) !important;
+    border: none !important;
+    color: rgb(67, 115, 117) !important;
+    border-radius: 50px !important;
+    width: 15%;
+}
+
+.addComment {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.commentBoard {
+    padding: 20px;
+    margin: 10px;
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 import {
   Card,
   CardBody,
@@ -13,7 +14,17 @@ import {
 } from "reactstrap";
 import style from "../styles/PhotoGalleryPage.module.css";
 
-export const PhotoCard = ({ photo, name, description, like }) => {
+const PhotoCard = ({
+  id,
+  photo,
+  name,
+  description,
+  like,
+  handleComment,
+  handleLike,
+  handleDisLike,
+  comments,
+}) => {
   const [showDescription, setShowDescription] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const onClick = () => {
@@ -21,22 +32,20 @@ export const PhotoCard = ({ photo, name, description, like }) => {
     setModalOpen(true);
   };
   const [isLike, setLike] = useState(false);
-  const [numLike, setNumLike] = useState(like);
   const addLike = () => {
     setLike(true);
-    setNumLike(numLike + 1);
+    handleLike(id);
   };
   const dislike = () => {
     setLike(false);
-    setNumLike(numLike - 1);
+    handleDisLike(id);
   };
   const [username, setUsername] = useState("");
   const [comment, setComment] = useState("");
   const [rate, setRate] = useState(0);
-  const [commentList, setCommentList] = useState([]);
   const addComment = () => {
     if (username != "" && comment != "") {
-      setCommentList([...commentList, { username, comment, rate }]);
+      handleComment(username, comment, rate, id);
       setComment("");
       setUsername("");
       setRate(0);
@@ -70,7 +79,7 @@ export const PhotoCard = ({ photo, name, description, like }) => {
           )}
           <span>
             {" "}
-            {numLike} {numLike > 1 ? "likes" : "like"}{" "}
+            {like} {like > 1 ? "likes" : "like"}{" "}
           </span>
         </ModalBody>
       </Modal>
@@ -99,11 +108,11 @@ export const PhotoCard = ({ photo, name, description, like }) => {
             )}
             <span>
               {" "}
-              {numLike} {numLike > 1 ? "likes" : "like"}{" "}
+              {like} {like > 1 ? "likes" : "like"}{" "}
             </span>
             <br />
             <div>
-              {commentList.map((comment) => (
+              {comments.map((comment) => (
                 <>
                   <div>
                     <b>{comment.username}</b> {comment.comment} {"("}
@@ -163,3 +172,26 @@ export const PhotoCard = ({ photo, name, description, like }) => {
     </>
   );
 };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleComment: (username, comment, rate, photoId) => {
+      dispatch({
+        type: "COMMENT",
+        payload: { username, comment, rate, photoId },
+      });
+    },
+    handleLike: (photoId) => {
+      dispatch({
+        type: "LIKE",
+        payload: { photoId },
+      });
+    },
+    handleDisLike: (photoId) => {
+      dispatch({
+        type: "DISLIKE",
+        payload: { photoId },
+      });
+    },
+  };
+};
+export default connect(null, mapDispatchToProps)(PhotoCard);

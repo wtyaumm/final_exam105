@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 import style from "../styles/AboutMePage.module.css";
 
-export const AboutMePage = () => {
+const AboutMePage = () => {
   return (
     <div>
       <div className={style.cards}>
@@ -112,3 +112,4 @@ export const AboutMePage = () => {
     </div>
   );
 };
+export default AboutMePage;

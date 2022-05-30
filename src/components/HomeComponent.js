@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
-import { Header } from "./Header";
-import { Footer } from "./Footer";
-import { HomePage } from "./HomePage";
-import { AboutMePage } from "./AboutMePage";
-import { PhotoGalleryPage } from "./PhotoGalleryPage";
+import Header from "./Header";
+import Footer from "./Footer";
+import HomePage from "./HomePage";
+import AboutMePage from "./AboutMePage";
+import PhotoGalleryPage from "./PhotoGalleryPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const HomeComponent = () => {

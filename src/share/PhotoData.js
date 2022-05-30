@@ -5,6 +5,7 @@ export const Data = [
     description: "Seventeen with soft tone",
     photo: "images/sev2.webp",
     like: 20,
+    comments: [],
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const Data = [
     description: "Seventeen with suits",
     photo: "images/sev3.jpeg",
     like: 4,
+    comments: [],
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export const Data = [
     description: "Seventeen with color cloths",
     photo: "images/sev4.jpeg",
     like: 7,
+    comments: [],
   },
   {
     id: 4,
@@ -26,5 +29,6 @@ export const Data = [
     description: "Seventeen with dark tone",
     photo: "images/sev5.jpeg",
     like: 1,
+    comments: [],
   },
 ];

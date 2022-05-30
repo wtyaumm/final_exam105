@@ -1,7 +1,7 @@
 import React from "react";
 import style from "../styles/Footer.module.css";
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <div className={style.footer}>
       <div className={style.link}>
@@ -37,3 +37,4 @@ export const Footer = () => {
     </div>
   );
 };
+export default Footer;
