@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Card,
-  CardBody,
-  CardGroup,
-  CardImg,
-  CardSubtitle,
-  CardTitle,
-} from "reactstrap";
+import { Card, CardBody, CardImg, CardSubtitle, CardTitle } from "reactstrap";
 import style from "../styles/HomePage.module.css";
 
 export const HomePage = () => {
