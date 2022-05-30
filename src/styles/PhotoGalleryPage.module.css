@@ -1,9 +1,24 @@
 .cards {
     margin: 20px;
-
 }
 
 .all {
     display: flex;
     flex-wrap: wrap;
+}
+
+.commentButton {
+    margin-top: 10px;
+    background-color: rgb(255, 214, 230) !important;
+    border: none !important;
+    color: rgb(67, 115, 117) !important;
+    border-radius: 50px !important;
+}
+
+.input {
+    border-radius: 50px !important;
+}
+
+.label {
+    margin-top: 10px;
 }

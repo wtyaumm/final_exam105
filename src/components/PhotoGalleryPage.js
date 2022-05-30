@@ -16,6 +16,7 @@ export const PhotoGalleryPage = () => {
               photo={p.photo}
               name={p.name}
               description={p.description}
+              like={p.like}
             />
           </Col>
         ))}
